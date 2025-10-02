@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación - Mónica Velasco</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            padding: 20px;
+        }
+        
+        .card {
+            width: 100%;
+            max-width: 380px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-header {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            padding: 35px 20px 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .name {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+        
+        .title {
+            font-size: 16px;
+            opacity: 0.95;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .company {
+            font-size: 14px;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+            margin: 15px 0;
+        }
+        
+        .card-body {
+            padding: 30px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            color: #ff4081;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .info-item:hover {
+            background-color: #fff5f7;
+        }
+        
+        .icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 18px;
+            box-shadow: 0 3px 8px rgba(255, 175, 189, 0.4);
+        }
+        
+        .info-text {
+            flex: 1;
+        }
+        
+        .info-label {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 3px;
+        }
+        
+        .info-value {
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .social-section {
+            margin-top: 25px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        
+        .linkedin {
+            background: linear-gradient(to right, #0077b5, #00a0dc);
+        }
+        
+        .github {
+            background: linear-gradient(to right, #333, #555);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1 class="name">Mónica Velasco</h1>
+            <p class="title">Estudiante de Desarrollo de Software</p>
+            <p class="company">Universidad Tecnológica de Calvillo</p>
+            <div class="divider"></div>
+        </div>
+        <div class="card-body">
+            <div class="contact-section">
+                <div class="section-title">
+                    <i class="fas fa-address-card"></i>
+                    Información de Contacto
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <div class="info-label">Email</div>
+                            <div class="info-value">monica.velasco.6121@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <div class="info-label">Teléfono</div>
+                            <div class="info-value">+52 --- --- ----</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <div class="info-label">Ubicación</div>
+                            <div class="info-value">Aguascalientes, México</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="info-text">
+                            <div class="info-label">Sitio web</div>
+                            <div class="info-value">monvel05.github.io/personalPage/</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-section">
+                <div class="section-title">
+                    <i class="fas fa-share-alt"></i>
+                    Sígueme en redes
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/mon_vel05/" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/monica-velasco-b9340226a" class="social-link linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/monvel05" class="social-link github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
