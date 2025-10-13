@@ -1,0 +1,18 @@
+<p>Mi nombre es: {{nombre}}</p>
+<p>La suma de 1+2 es igual a {{1+2}}</p>
+<input type="text">
+@if (nombre) {
+    <p>El nombre no está vacío</p>
+} @else {
+    <p>El nombre está vacío</p>
+}
+
+<button class="btn btn-info" (click)="cambiarAnimal()">Cambiar animal</button>
+
+@if (animal == 'gatito') {
+    <img src="https://i.pinimg.com/736x/ae/c8/9b/aec89b5fbfcf861805057dd7e0e7d3f7.jpg" alt="Gatito">
+} @else {
+    <img src="https://i.pinimg.com/736x/21/99/f7/2199f7d6e3e471005a8d83d8c62fb5a8.jpg" alt="Perrito">
+}
+
+<button class="btn btn-info" (click)="abarrotesPablito()">Obtener personajes de Rick y Morty</button>
