@@ -12,8 +12,20 @@ export class PaginaPrincipal {
   constructor(private mortyApi: MortyApi, private pokeApi: PokeApi) {}
   nombre = 'Monica';
   animal = 'xd';
+  miPersonaje: any = null;
   personajes: any[] = [];
   pikachu: any = null;
+
+  ngOnInit() {
+    this.abarrotesPablito();
+    this.traerAPikachu();
+  }
+
+  takeIndex(index: number) {
+    console.log(index);
+    console.log(this.personajes[index]);
+    this.miPersonaje = this.personajes[index];
+  }
 
   cambiarAnimal(){
     if(this.animal == 'gatito'){

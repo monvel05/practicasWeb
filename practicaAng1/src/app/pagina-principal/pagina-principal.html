@@ -19,45 +19,48 @@
   Obtener personajes de Rick y Morty
 </button>
 
-<br><br><br><br>
+<br /><br /><br /><br />
 
 @if (pikachu) {
-  <div class="card" style="width: 18rem">
-    <img [src]="pikachu.sprites?.front_default" class="card-img-top" alt="Pikachu" />
-    <div class="card-body">
-      <h5 class="card-title">{{ pikachu.forms[0]?.name }}</h5>
-      <p class="card-text">
-        Tipo: {{ pikachu.types[0]?.type?.name }} <br>
-        Altura: {{ pikachu.height }} <br>
-        Peso: {{ pikachu.weight }} <br>
-      </p>
-      <button class="btn btn-primary" (click)="traerAPikachu()">Actualizar</button>
-    </div>
+<div class="card" style="width: 18rem">
+  <img [src]="pikachu.sprites?.front_default" class="card-img-top" alt="Pikachu" />
+  <div class="card-body">
+    <h5 class="card-title">{{ pikachu.forms[0]?.name }}</h5>
+    <p class="card-text">
+      Tipo: {{ pikachu.types[0]?.type?.name }} <br />
+      Altura: {{ pikachu.height }} <br />
+      Peso: {{ pikachu.weight }} <br />
+    </p>
+    <button class="btn btn-primary" (click)="traerAPikachu()">Actualizar</button>
   </div>
+</div>
 } @else {
-  <div class="card" style="width: 18rem">
-    <div class="card-body">
-      <h5 class="card-title">Pikachu no cargado</h5>
-      <button class="btn btn-primary" (click)="traerAPikachu()">Cargar Pikachu</button>
-    </div>
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title">Pikachu no cargado</h5>
+    <button class="btn btn-primary" (click)="traerAPikachu()">Cargar Pikachu</button>
   </div>
+</div>
 }
 
-<br><br><br><br>
+<br /><br /><br /><br />
 
 <div class="container">
   <div class="row">
     <div class="col d-flex flex-wrap gap-3">
-      @for (personaje of personajes; track personaje) {
+      @for (personaje of personajes; track personaje; let i = $index) {
       <div class="card" style="width: 18rem">
-        <img [src]="personaje.image" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{{ personaje.name }}</h5>
-          <p class="card-text">
-            {{ personaje.status }} - {{ personaje.species }} - {{ personaje.origin.name }} -
-            {{ personaje.location.name }}
-          </p>
-          <a [href]="personaje.url" target="_blank" class="btn btn-primary">Go somewhere</a>
+          <button
+            (click)="takeIndex(i)"
+            target="_blank"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Ver más
+          </button>
         </div>
       </div>
       } @empty {
@@ -67,13 +70,14 @@
   </div>
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -81,7 +85,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="card" style="width: 18rem">
+          <img [src]="miPersonaje.image" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ miPersonaje.name }}</h5>
+            <p class="card-text">
+              {{ miPersonaje.status }} - {{ miPersonaje.species }} - {{ miPersonaje.origin.name }} -
+              {{ miPersonaje.location.name }}
+            </p>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
