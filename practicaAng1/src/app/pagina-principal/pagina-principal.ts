@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Login } from "../login/login";
 import { MortyApi } from '../services/morty-api';
 import { PokeApi } from '../services/poke-api';
 
