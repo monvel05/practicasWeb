@@ -1,0 +1,75 @@
+<div class="container">
+  <h1>Pokemones</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex flex-wrap gap-3">
+        @for (pokemon of pokemones; track pokemones; let i = $index) {
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">{{ pokemon.name }}</h5>
+            <button
+              (click)="traerPokemon(pokemon.url)"
+              target="_blank"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Ver más
+            </button>
+          </div>
+        </div>
+        } @empty {
+        <h1>Ups, no encontramos personajes pipipi</h1>
+        }
+      </div>
+    </div>
+  </div>
+
+
+  <!--Modal que muestra la información del pokemon-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              {{ miPokemon?.forms[0]?.name || 'Cargando...' }}
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="card" style="width: 18rem">
+              <img [src]="miPokemon.sprites?.front_default" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">{{ miPokemon.forms[0]?.name }}</h5>
+                <p class="card-text">
+                  Type: {{ miPokemon.types[0]?.type?.name }} <br />
+                  Height: {{ miPokemon.height }} <br />
+                  Weight: {{ miPokemon.weight }} <br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button
+              (click)="traerPokemon(miPokemon.forms[0]?.url)"
+              type="button"
+              class="btn btn-primary"
+            >
+              Load again
+            </button>
+          </div>
+        </div>
+      </div>
+</div>

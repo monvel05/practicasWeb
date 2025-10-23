@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Login</h1>
+  
+  <p>(Write 'admin' in both sides)</p>
+
+  <input type="text" placeholder="Username" [(ngModel)]="username" />
+  <input type="password" placeholder="Password" [(ngModel)]="password" />
+  <button (click)="login(username, password)">Enter</button>
+
+</div>
