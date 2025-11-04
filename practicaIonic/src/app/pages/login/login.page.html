@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+  <div class="login-container">
+    <ion-card>
+      <img
+        alt="Silhouette of mountains"
+        src="https://bizarro.fm/wp-content/uploads/2020/09/STUDIO_GHIBLI_PORTADA.webp"
+      />
+      <ion-card-header>
+        <ion-card-title style="text-align: center">{{isLogin? 'Login' : 'Register'}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-input
+          label="Email"
+          type="email"
+          labelPlacement="floating"
+          fill="solid"
+          placeholder="Enter your email"
+          required>
+        </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+          label="Password"
+          type="password"
+          labelPlacement="floating"
+          fill="solid"
+          placeholder="Enter your password"
+          required>
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
+        </ion-item>
+        <ion-button expand="block" fill="clear" (click)="toggleForm()">
+          {{isLogin? 'Create an account' : 'Already have an account? Login'}}
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
