@@ -10,6 +10,7 @@
       </ion-card-header>
 
       <ion-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
         <ion-item>
           <ion-input
           label="Email"
@@ -17,6 +18,7 @@
           labelPlacement="floating"
           fill="solid"
           placeholder="Enter your email"
+          formControlName = "email"
           required>
         </ion-input>
         </ion-item>
@@ -27,6 +29,7 @@
           labelPlacement="floating"
           fill="solid"
           placeholder="Enter your password"
+          formControlName = "password" 
           required>
           <ion-input-password-toggle slot="end"></ion-input-password-toggle>
         </ion-input>
@@ -34,6 +37,7 @@
         <ion-button expand="block" fill="clear" (click)="toggleForm()">
           {{isLogin? 'Create an account' : 'Already have an account? Login'}}
         </ion-button>
+        </form>
       </ion-card-content>
     </ion-card>
   </div>
