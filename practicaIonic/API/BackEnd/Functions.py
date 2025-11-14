@@ -94,3 +94,14 @@ def fnGetAllUsuarios():
         objResponse = respuestas.err500.copy()
         objResponse['Error'] = str(e)
         return jsonify(objResponse)
+    
+
+def fnPostLogin(email, password):
+    try:
+        objQuery = dbUsuarios.find_one({"strCorreo": email, "strContrasena": password})
+        objResponse = respuestas.succ200.copy()
+        return jsonify(objResponse)
+    except Exception as e:
+        objResponse = respuestas.err500.copy()
+        objResponse['Error'] = str(e)
+        return jsonify(objResponse)
